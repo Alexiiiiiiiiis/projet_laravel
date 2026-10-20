@@ -21,7 +21,7 @@ class PagesController extends Controller
     public function services()
     {
         // $produits = DB::table('products')->inRandomOrder()->limit(1)->get();
-        $produits = Product::orderBy('product_name', 'desc')->get();
+        $produits = Product::orderBy('product_name', 'desc')->paginate(2);
 
         return view('pages.services')->with('produits', $produits);
     }
@@ -32,7 +32,7 @@ class PagesController extends Controller
                     ->where('id', $id)
                     ->first(); */
 
-            $produit = Product::find($id);
+        $produit = Product::find($id);
         return view('pages.show')->with('produit', $produit);
     }
 }

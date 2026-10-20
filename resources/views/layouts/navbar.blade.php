@@ -8,8 +8,8 @@
                 <li class="{{ request()->routeIs('apropos') ? 'active' : '' }}"><a href="{{ route('apropos') }}">About</a></li>
                 <li class="{{ request()->routeIs('services') ? 'active' : '' }}"><a href="{{ route('services') }}">Services</a></li>
             </ul>
-             <!--<ul class="nav navbar-nav navbar-right">
-                <li><a href="#">New product</a></li>
-            </ul>-->
+             <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ route('products.create') }}">Nouveau produit</a></li>
+            </ul>
         </div>
     </nav>
